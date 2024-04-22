@@ -1,0 +1,359 @@
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: black;
+    color:white;
+    /* We don't want scrollbar for entire body except main content, so we will keep overflow:hidden */
+    overflow: hidden;
+  
+}
+.main{
+    /* display our elements as flex */
+    display: flex;
+    /* Setting height to 100vh so that the entire main body gets full height of viewport */
+    height:100vh;
+    /* Add some space from left or maybe everwhere not sure */
+    padding: 0.5rem;
+}
+.sidebar{
+    /* giving some bg color for now to distinguish the elements  which is now commwnted out*/
+    /* background-color: red; */
+    /* Setting the background color of side bar */
+    background-color: black;
+    /* setting a width to side-bar */
+    width: 340px;
+    /* set the border radius !important-->1 rem= 16px */
+    /* Benefit of rem is that as my screen size will decrease then relatively my border radius will decrease */
+    border-radius:1rem;
+    /* Add some space to right */
+    margin-right: 0.5rem;
+}
+.main-content{
+    /* giving some bg color for now to distinguish the elements */
+    /* background-color:blue; */
+    /* Setting original color */
+    
+    background-color: #121212;
+    /* Remaining elements in flex container should get the space they need but the remianing space should be given to that 
+    particular div */
+    flex: 1;
+    border-radius:1rem;
+    /* Need  scroll bar for main content */
+    overflow: auto;
+    padding: 0 1.5rem 0 1.5rem;
+}
+.music-player{
+    /* giving some bg color for now to distinguish the elements */
+    /* background-color: yellow; */
+    /* setting original color */
+    background-color: black;
+    /* So that it will be always visible at the bottom */
+    position:fixed;
+    /* Set it in the bottom of our screen */
+    bottom:0px;
+    /* set its width to 100% to ocuppy entire width of parent element */
+    width:100%;
+    /* Setting height of music player */
+    height:72px;
+    display: flex;
+}
+/* Styling for anchor tags */
+a{
+    text-decoration: none;
+    color:white;
+}
+.nav{
+    background-color: #121212;
+    border-radius: 1rem;
+    /* get all div in one line */
+    display: flex;
+    /* now get all div in coloumn form */
+    flex-direction: column;
+    /* Get alll content in center verticaly in nav */
+    justify-content: center;
+    height:100px;
+    /* rem is used to make website more responsive */
+    padding:0.5rem 0.75rem;
+    
+}
+.nav-option{
+    /* 2.5rem=40px */
+    line-height: 2.5rem;
+    opacity: 0.7;
+    /* I have added this on my own to make make search look like original spotify search opacity transition */
+    transition: opacity 0.1s linear;
+    /* Adding overall space to elements in nav-option */
+    padding: 0.5rem 0.75rem;
+}
+.nav-option:hover{
+    /* we want this effect to happen only for search so we have aready set home opacity to 1 in html file */
+    opacity: 1;
+}
+.nav-option i{
+    font-size: 1.25rem;
+}
+.nav-option a{
+    font-size: 1rem;
+    /* To give it space from icon */
+    margin-left: 1rem;
+}
+.library{
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 100%;
+    margin-top: 0.75rem;
+    /* Padding same as above */
+    padding:0.5rem 0.75rem;
+    
+}
+.options{
+    
+    /* to get everything in same line */
+    display: flex;
+    /* your livbrary left and icons right */
+    justify-content: space-between;
+    /* Align items to center */
+    align-items: center;
+    
+    
+}
+.lib-option img{
+    /* setting same height and width as upper icons */
+    height:1.25rem;
+    width: 1.25rem;
+}
+.icons{
+    font-size: 1.25rem;
+    opacity: 0.7;
+    margin-right:1rem;
+    display:flex;
+}
+.icons i{
+
+    opacity: 0.7;
+    margin-right:1rem;
+}
+.icons i:hover{
+    opacity: 1;
+}
+/* create styling for your box */
+.box{
+    background-color: #232323;
+    height:8rem;
+    border-radius: 0.75rem;
+    margin: 0.75rem 0 1.75rem 0;
+    padding:0.5rem 1.20rem;
+}
+.box-p1{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.box-p2{
+    font-size: 0.85rem;
+    opacity:0.9;
+}
+.badge{
+    /* apply styling to button */
+    background-color: white;
+    /* By default buttons have border */
+    border: none;
+    border-radius: 100px;
+    padding: 0.25rem 1rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    height:2rem;
+    /* content will bw fit in width */
+    width: fit-content;
+}
+.dark-badge {
+    background-color: black;
+    color:white;
+}
+.sticky-nav{
+    position: sticky;
+    /* Writing sticky will not work we will give position from top */
+    top:0;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem 0 1rem 0;
+
+}
+.sticky-nav-icons img{
+    margin-left: 0.75rem;
+}
+.sticky-nav-options{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-right: 1rem;
+    
+}
+.sticky-nav-options button{
+    margin-right: 1rem;
+}
+.nav-item{
+    margin-right: 1 rem;
+}
+@media (max-width:1000px)
+{
+    /* All items under hide class should be hidden under width of 1000px */
+    .hide{
+            display: none;
+    }
+}
+.card{
+    background-color: #232323;
+    width: 150px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    
+}
+/* If i apply styling to one card then all the cards can also be applied same styling */
+.cards-container{
+    display:inline-flex;
+    flex-wrap: wrap;
+    margin-top:1rem;
+}
+.card-img{
+    /* confine to card width */
+    width: 100%;
+    /* Image overlapping my card radius so effect not visible */
+    border-radius: 0.5rem;
+}
+.card-title{
+    font-weight: 600;
+}
+.card-info{
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.footer{
+    height: 300px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    /* take 90 percent width of footer */
+    width:90%;
+    /* Jitne height badi karoge utna border top upar chala jayega */
+    height: 50%;
+    border-top: 1px solid white;
+    opacity:0.4;
+
+}
+.music-player{
+   position: fixed;
+   bottom:0;
+   padding-bottom:1rem;
+}
+.album{
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    padding: 0.5rem;
+    width:20%
+}
+.album img{
+
+        height:3rem;
+        width:3.1rem;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-left:1rem;
+    justify-content: space-evenly;
+}
+.album i,span{
+    
+    margin-top: 1rem;
+    font-size: 1rem;
+    align-self: center;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
+    opacity: 0.7;
+
+}
+.player{
+    width:50%;
+    display: inline-block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-right: 10px;
+    margin-left: 1.5rem;
+    align-items: center;
+    
+}
+.controls{
+    width:30%;
+    align-items:center;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.controls img{
+    /* opacity: 0.7; */
+    height:2rem;
+    width:2rem;
+    display:inline-flex;
+    margin-top: 0.6rem;
+    
+    
+   
+}
+.player-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+.player-control-icon{
+    height:1rem;
+    margin-right: 1.75rem;
+    opacity: 0.7;
+   
+}
+.player-control-icon:hover{
+    opacity: 1;
+}
+.playback-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+.progress-bar{
+    width:70%;
+    margin-top: 0;
+    /* Removes all the styling applied by the chrome browser */
+    appearance: none;
+    /* Apply styling  */
+    background-color: transparent;
+    cursor:pointer;
+    /* https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html */
+
+}
+.progress-bar::-webkit-slider-runnable-track{
+    background-color: #ddd;
+    border-radius: 100px;
+    height:0.2rem;
+}
+.progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    height:1rem;
+    width:1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    /* Shift thumb above*/
+    margin-top: -6px;
+}
